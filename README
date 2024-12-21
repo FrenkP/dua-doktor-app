@@ -1,0 +1,51 @@
+For this code to run on your computer you must add a ".env" file in the "admin" and "frontend" folders containing the following line :
+
+VITE_BACKEND_URL=http://localhost:4000
+
+--------------------------------------------
+
+And a ".env" file in the background folder containing the following information :
+
+JWT_SECRET=mysecret
+
+ADMIN_EMAIL=[YOUR EMAIL]
+ADMIN_PASSWORD=[PASSWORD OF YOUR CHOICE]
+
+MONGODB_URI=[URL OF YOUR MONGODB]
+
+CLOUDINARY_NAME=[YOUR CLOUD NAME]
+CLOUDINARY_API_KEY=[YOUR API KEY]
+CLOUDINARY_SECRET_KEY=[YOUR SECRET KEY]
+
+--------------------------------------------
+
+To get your MongoDB URL :
+
+1. Log in to your account.
+2. Click "Connect" on the desired cluster.
+3. Select "MongoDB for VS Code" (2nd from the bottom)
+4. Copy the URL given in that page, generally : mongodb+srv://<db_username>:<db_password>@<db_name>.xn6rg.mongodb.net/
+5. Replace db_username and db_password with the appropriate information.
+
+In the file mongodb.js (/backend/config/mongodb.js), enter your MongoDB cluster name in the following line :   await mongoose.connect(`${process.env.MONGODB_URI}/[YOUR_DB_NAME]`);
+
+--------------------------------------------
+
+To get your Cloudinary information :
+
+1. Sign up to "cloudinary.com" and it will be in the top rectangle of the main page of your developer dashboard.
+
+2. To get your Cloudinary API keys : Click "Go to API Keys" in the same rectangle.
+
+--------------------------------------------
+
+Once everything is setup.
+
+1. Open 3 terminals in VS Code, one for each folder (admin, backend and frontend).
+2. Navigate to the appropriate folder in each termianl
+3. Enter the following command in the "backend" terminal : npm run server
+4. Enter the following command in the "admin" and "frontend" terminal : npm run dev
+
+--------------------------------------------
+
+Congratulations, you now have full access of the React.js app.
